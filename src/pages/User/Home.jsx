@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import heroimg from "../../assets/Images/hero.png";
 import { FaLinkedin } from "react-icons/fa";
 import aboutusImg from "../../assets/Images/jason-goodman-vbxyFxlgpjM-unsplash 1.png";
@@ -6,9 +6,27 @@ import "../../Styles/home.css";
 import appdeveolpment from "../../assets/Images/app-development.png";
 import growth from "../../assets/Images/growth.png";
 import featuresImg from "../../assets/Images/features 1 (1).png";
-import ProjectCard from "../../components/Ui/ProjectCard";
+import ProjectList from "../../components/Ui/ProjectList";
+import ProjectsData from "../../assets/Data/data";
+import TestimonialCard from "../../components/Ui/TestimonialCard";
 
 const Home = () => {
+  console.log(ProjectsData);
+
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredProjects = ProjectsData.filter((project) => {
+    if (selectedCategory === "All") {
+      return true;
+    } else {
+      return project.category === selectedCategory;
+    }
+  });
+
   return (
     <div>
       <section className="bg-home mb-10">
@@ -66,7 +84,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* our services */}
 
       <section className="mb-10">
@@ -283,7 +300,7 @@ const Home = () => {
 
       {/* portfolio */}
 
-      <section>
+      <section className="mb-10">
         <div className="container mx-auto">
           <div className="text-center text-black mb-10">
             <h1 className="text-4xl font-bold">Our Portfolio</h1>
@@ -291,20 +308,51 @@ const Home = () => {
 
           <div className="container">
             <div className="flex justify-center gap-40 mb-10">
-              <button className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg">
+              <button
+                className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg"
+                onClick={() => handleCategoryClick("All")}
+              >
+                All
+              </button>
+
+              <button
+                className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg"
+                onClick={() => handleCategoryClick("Website")}
+              >
                 Website
               </button>
-              <button className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg">
+              <button
+                className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg"
+                onClick={() => handleCategoryClick("App")}
+              >
                 Mobile App
               </button>
-              <button className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg">
+              <button
+                className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg"
+                onClick={() => handleCategoryClick("Other")}
+              >
                 Other
               </button>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-              <ProjectCard />
+              {filteredProjects.length === 0 ? (
+                <h1 className="text-center">No Projects Found</h1>
+              ) : (
+                <ProjectList projects={filteredProjects} />
+              )}
             </div>
+          </div>
+        </div>
+      </section>
+      {/* testimotionel */}
+      <section className="mb-10">
+        <div className="container mx-auto">
+          <div className="text-center text-black mb-10">
+            <h1 className="text-4xl font-bold">Testimonials</h1>
+          </div>
+          <div className="">
+            <TestimonialCard />
           </div>
         </div>
       </section>

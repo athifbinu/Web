@@ -1,32 +1,18 @@
 import React from "react";
-import test from "../../assets/Images/projectOne.png";
-const ProjectCard = () => {
+import { motion } from "framer-motion";
+
+const ProjectCard = ({ projectData }) => {
   return (
-    <>
-      <div className="rounded-xl border border-blue-200 w-80 ">
-        <div className="p-5 h-auto">
-          <img className="" src={test} alt="" />
-        </div>
+    <div className="rounded-xl border border-blue-200 w-80 ">
+      <div className="p-5 h-auto">
+        <motion.img
+          whileHover={{ scale: 1.1 }}
+          className=""
+          src={projectData.ProjectImg}
+          alt=""
+        />
       </div>
-
-      <div className="rounded-xl border border-blue-200 w-80 ">
-        <div className="p-5 h-auto">
-          <img className="" src={test} alt="" />
-        </div>
-      </div>
-
-      <div className="rounded-xl border border-blue-200 w-80 ">
-        <div className="p-5 h-auto">
-          <img className="" src={test} alt="" />
-        </div>
-      </div>
-
-      <div className="rounded-xl border border-blue-200 w-80 ">
-        <div className="p-5 h-auto">
-          <img className="" src={test} alt="" />
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

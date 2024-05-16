@@ -1,0 +1,10 @@
+/* TestimonialCard.css */
+
+/* Media query for mobile screens */
+@media only screen and (max-width: 768px) {
+  /* Change arrow color on mobile screens */
+  .slick-prev,
+  .slick-next {
+    color: red; /* Change the color to your desired color */
+  }
+}
