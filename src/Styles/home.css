@@ -34,3 +34,35 @@
     transform: translateX(calc(-150px * 9));
   }
 }
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+  font-size: 24px;
+  color: #000;
+}
+
+.arrow.prev {
+  left: 10px;
+  padding: 6px;
+  border-radius: 8px;
+}
+.arrow.prev:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+}
+
+.arrow.next {
+  right: 10px;
+  padding: 6px;
+  border-radius: 8px;
+}
+.arrow.next:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+}

@@ -12,6 +12,14 @@ import TestimonialCard from "../../components/Ui/TestimonialCard";
 import { motion } from "framer-motion";
 import reactIcon from "../../assets/Images/reactimg.png";
 
+import profile from "../../assets/Images/testimonial-4 1.png";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltLeft } from "react-icons/fa";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Home = () => {
   console.log(ProjectsData);
 
@@ -33,12 +41,12 @@ const Home = () => {
     <div>
       <section className="bg-home mb-10">
         <div className="flex items-center justify-between p-36">
-          <div>
+          <div className="hidden  flex-1 lg:flex w-1/2 ">
             <img className="w-96" src={heroimg} alt="" />
           </div>
 
           <div>
-            <h1 className="text-4xl font-bold text-white mb-6">
+            <h1 className="text-4xl font-bold text-white mb-6 ">
               delivering superior <br />
               <span className="text-herobtn">IT Solutions</span>
             </h1>
@@ -463,12 +471,14 @@ const Home = () => {
           <div className="text-center text-black mb-10">
             <h1 className="text-4xl font-bold">Testimonials</h1>
           </div>
-          <div className="">
+
+          <div>
             <TestimonialCard />
           </div>
         </div>
       </section>
 
+      {/* contact section */}
       <section className="mb-10">
         <div className="container mx-auto">
           <div className="text-center text-black mb-10">

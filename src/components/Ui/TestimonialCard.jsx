@@ -1,137 +1,79 @@
 import React from "react";
+
+import profile from "../../assets/Images/testimonial-4 1.png";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltLeft } from "react-icons/fa";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import star from "../../assets/Images/star.png";
-import profile from "../../assets/Images/testimonial-4 1.png";
 
-function TestimonialCard() {
+import testimonials from "../../assets/Data/Testimonials";
+
+const NextArrow = ({ onClick }) => (
+  <div className="arrow next" onClick={onClick}>
+    <span>
+      <FaLongArrowAltRight />
+    </span>
+  </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <div className="arrow prev" onClick={onClick}>
+    <span>
+      <FaLongArrowAltLeft />
+    </span>
+  </div>
+);
+
+const TestimonialCard = () => {
   const settings = {
-    className: "center",
-    centerMode: true,
+    dots: false,
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
     speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    dots: true, // Add dots for navigation
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+
     responsive: [
       {
-        breakpoint: 768, // Adjust breakpoint for responsiveness
+        breakpoint: 768, // Adjust as needed
         settings: {
           slidesToShow: 1,
-          centerMode: false,
-          arrows: true, // Show arrows on mobile screens
-          dots: false, // Hide dots on mobile screens
         },
       },
     ],
   };
 
   return (
-    <div className="gap-32">
+    <>
       <Slider {...settings}>
-        <div className="bg-blue-300   rounded-xl overflow-hidden ">
-          <div className="p-7">
-            <div>
-              <div className="flex">
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-              </div>
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="p-7 bg-white rounded-lg  max-w-xl mx-auto"
+          >
+            <div className="flex justify-center mb-4">
+              <img
+                className="w-40 h-40 rounded-full object-cover"
+                src={testimonial.image}
+                alt="Profile"
+              />
             </div>
-
-            <div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
-                necessitatibus excepturi perspiciatis neque, molestias, iure
-                placeat voluptas laborum harum nem
-              </p>
+            <div className="text-center mb-4">
+              <p className="text-lg italic">"{testimonial.text}"</p>
             </div>
-
-            <div className="flex justify-between">
-              <div>
-                <img className="w-12" src={profile} alt="" />
-              </div>
-
-              <div>
-                <p>Athf</p>
-                <p>Web developer</p>
-              </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-500 mb-2">{testimonial.date}</p>
+              <h2 className="text-xl font-semibold">{testimonial.name}</h2>
+              <p className="text-sm text-gray-600">{testimonial.title}</p>
             </div>
           </div>
-        </div>
-        <div className="bg-blue-300 w-56 h-auto rounded-xl overflow-hidden">
-          <div className="p-7">
-            <div>
-              <div className="flex">
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-              </div>
-            </div>
-
-            <div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
-                necessitatibus excepturi perspiciatis neque, molestias, iure
-                placeat voluptas laborum harum nem
-              </p>
-            </div>
-
-            <div className="flex justify-between">
-              <div>
-                <img className="w-12" src={profile} alt="" />
-              </div>
-
-              <div>
-                <p>Athf</p>
-                <p>Web developer</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-blue-300 w-56 h-auto rounded-xl overflow-hidden  ">
-          <div className="p-7">
-            <div>
-              <div className="flex">
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-                <img className="w-5" src={star} alt="" />
-              </div>
-            </div>
-
-            <div>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
-                necessitatibus excepturi perspiciatis neque, molestias, iure
-                placeat voluptas laborum harum nem
-              </p>
-            </div>
-
-            <div className="flex justify-between">
-              <div>
-                <img className="w-12" src={profile} alt="" />
-              </div>
-
-              <div>
-                <p>Athf</p>
-                <p>Web developer</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </Slider>
-    </div>
+    </>
   );
-}
+};
 
 export default TestimonialCard;

@@ -23,7 +23,7 @@ const Header = () => {
       <div className="md:flex items-center justify-between bg-home py-4 md:px-10 px-7">
         <div className="font-bold cursor-pointer flex">
           <Link to="/" className="">
-            <img src={logo} alt="Logo" className="h-20 " />
+            <img src={logo} alt="Logo" className="h-20" />
           </Link>
         </div>
 
@@ -52,13 +52,12 @@ const Header = () => {
               </Link>
             </li>
           ))}
+          <li className="md:ml-8 text-xl font-bold md:my-0 my-7">
+            <button className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg">
+              Submit
+            </button>
+          </li>
         </ul>
-
-        <div>
-          <button className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg">
-            Submit
-          </button>
-        </div>
       </div>
     </div>
   );
