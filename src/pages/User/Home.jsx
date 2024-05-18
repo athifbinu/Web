@@ -209,8 +209,8 @@ const Home = () => {
           <div className="text-center text-black mb-10">
             <h1 className="text-4xl font-bold">Why choose us</h1>
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 items-center ">
-            <div className="">
+          <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 items-center justify-items-center lg:gap-36">
+            <div>
               <div className="mb-7">
                 <div className="flex items-center gap-5 mb-4">
                   <h3 className="text-xl font-bold">Experience</h3>
@@ -255,12 +255,10 @@ const Home = () => {
             </div>
 
             <div>
-              <div>
-                <img src={featuresImg} alt="" />
-              </div>
+              <img src={featuresImg} alt="" />
             </div>
 
-            <div className="grid  md:justify-end">
+            <div className="grid md:justify-end">
               <div className="mb-7">
                 <div className="flex items-center gap-5 mb-4">
                   <h3 className="text-xl font-bold">Experience</h3>
