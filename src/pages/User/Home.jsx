@@ -103,7 +103,7 @@ const Home = () => {
           </div>
 
           <div>
-            <div className=" grid lg:grid-cols-4 md:grid-cols-3  mb-10">
+            <div className=" grid lg:grid-cols-4 md:grid-cols-3  mb-10 justify-center">
               <div className=" items-center justify-center shadow-2xl shadow-violet-600 boxShadow p-9 rounded-lg w-56 h-auto">
                 <div className="text-center">
                   <img
@@ -151,7 +151,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className=" grid lg:grid-cols-4 md:grid-cols-3 ">
+            <div className=" grid lg:grid-cols-4 md:grid-cols-3 justify-center ">
               <div className=" items-center justify-center shadow-2xl shadow-violet-600 boxShadow p-9 rounded-lg w-56 h-auto">
                 <div className="text-center">
                   <img
@@ -209,8 +209,8 @@ const Home = () => {
           <div className="text-center text-black mb-10">
             <h1 className="text-4xl font-bold">Why choose us</h1>
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-3 lg:justify-items-between">
-            <div>
+          <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 items-center ">
+            <div className="">
               <div className="mb-7">
                 <div className="flex items-center gap-5 mb-4">
                   <h3 className="text-xl font-bold">Experience</h3>
@@ -260,7 +260,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="grid lg:justify-end md:justify-end">
+            <div className="grid  md:justify-end">
               <div className="mb-7">
                 <div className="flex items-center gap-5 mb-4">
                   <h3 className="text-xl font-bold">Experience</h3>
