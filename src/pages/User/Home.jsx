@@ -40,13 +40,13 @@ const Home = () => {
   return (
     <div>
       <section className="bg-home mb-10">
-        <div className="flex items-center justify-between p-36">
-          <div className="hidden  flex-1 lg:flex w-1/2 ">
-            <img className="w-96" src={heroimg} alt="" />
+        <div className="grid lg:grid-cols-2 items-center p-32 justify-center">
+          <div className="hidden   lg:flex  ">
+            <img className="" src={heroimg} alt="" />
           </div>
 
           <div>
-            <h1 className="text-4xl font-bold text-white mb-6 ">
+            <h1 className="text-5xl font-bold text-white mb-6 ">
               delivering superior <br />
               <span className="text-herobtn">IT Solutions</span>
             </h1>
@@ -67,16 +67,16 @@ const Home = () => {
           <div className="text-center text-black mb-10">
             <h1 className="text-4xl font-bold">About us</h1>
           </div>
-          <div className="flex flex-wrap items-center">
-            <div className="w-1/2">
+          <div className=" grid lg:grid-cols-2 gap-20 sm:gap-16 items-center">
+            <div className="">
               <img
-                className=" rounded-lg h-96 "
+                className=" rounded-lg  w-full"
                 src={aboutusImg}
                 alt="About Us"
               />
             </div>
 
-            <div className="w-1/2">
+            <div className="">
               <p>
                 Webartistry, a dynamic subsidiary of Marbu Technologies, is a
                 leading player in the realm of web and mobile application
@@ -103,7 +103,7 @@ const Home = () => {
           </div>
 
           <div>
-            <div className="flex justify-between mb-10">
+            <div className=" grid lg:grid-cols-4 md:grid-cols-3  mb-10">
               <div className=" items-center justify-center shadow-2xl shadow-violet-600 boxShadow p-9 rounded-lg w-56 h-auto">
                 <div className="text-center">
                   <img
@@ -151,7 +151,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex justify-between">
+            <div className=" grid lg:grid-cols-4 md:grid-cols-3 ">
               <div className=" items-center justify-center shadow-2xl shadow-violet-600 boxShadow p-9 rounded-lg w-56 h-auto">
                 <div className="text-center">
                   <img
@@ -209,8 +209,7 @@ const Home = () => {
           <div className="text-center text-black mb-10">
             <h1 className="text-4xl font-bold">Why choose us</h1>
           </div>
-
-          <div className="flex justify-between">
+          <div className="grid lg:grid-cols-3 md:grid-cols-3 lg:justify-items-between">
             <div>
               <div className="mb-7">
                 <div className="flex items-center gap-5 mb-4">
@@ -261,7 +260,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div>
+            <div className="grid lg:justify-end md:justify-end">
               <div className="mb-7">
                 <div className="flex items-center gap-5 mb-4">
                   <h3 className="text-xl font-bold">Experience</h3>
@@ -317,14 +316,13 @@ const Home = () => {
           </div>
 
           <div className="container">
-            <div className="flex justify-center gap-40 mb-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-6 mb-10">
               <button
                 className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg"
                 onClick={() => handleCategoryClick("All")}
               >
                 All
               </button>
-
               <button
                 className="bg-herobtn hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-lg"
                 onClick={() => handleCategoryClick("Website")}
@@ -345,7 +343,7 @@ const Home = () => {
               </button>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
               {filteredProjects.length === 0 ? (
                 <h1 className="text-center">No Projects Found</h1>
               ) : (

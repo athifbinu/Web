@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const ProjectCard = ({ projectData }) => {
   return (
-    <div className="rounded-xl border border-blue-200 w-80 ">
+    <div className="rounded-xl border border-blue-200  ">
       <div className="p-5 h-auto">
         <motion.img
           whileHover={{ scale: 1.1 }}
