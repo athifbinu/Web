@@ -9,7 +9,7 @@ import featuresImg from "../../assets/Images/features 1 (1).png";
 import ProjectList from "../../components/Ui/ProjectList";
 import ProjectsData from "../../assets/Data/data";
 import TestimonialCard from "../../components/Ui/TestimonialCard";
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 import reactIcon from "../../assets/Images/reactimg.png";
 
 import profile from "../../assets/Images/testimonial-4 1.png";
@@ -37,16 +37,33 @@ const Home = () => {
     }
   });
 
+  const x = useSpring(0, { stiffness: 500, damping: 10 });
+  const [target, setTarget] = useState(0); // State to manage the target value
+
+  useEffect(() => {
+    // Set the target value for the spring
+    x.set(target);
+  }, [target, x]);
+
+  // Event handler for click
+  const handleClick = () => {
+    // Set a new target value on click
+    setTarget((prev) => (prev === 0 ? 20 : 0)); // Example: Toggle between 0 and 100
+  };
   return (
     <div>
       <section className="bg-home mb-10">
-        <div className="grid lg:grid-cols-2 items-center p-32 justify-center">
-          <div className="hidden   lg:flex  ">
-            <img className="" src={heroimg} alt="" />
-          </div>
+        <div className="grid lg:grid-cols-2 items-center p-28 justify-center">
+          <motion.div
+            className="hidden lg:flex"
+            style={{ x }}
+            onClick={handleClick}
+          >
+            <img src={heroimg} alt="Hero" />
+          </motion.div>
 
           <div>
-            <h1 className="text-5xl font-bold text-white mb-6 ">
+            <h1 className="text-5xl font-bold text-white mb-6">
               delivering superior <br />
               <span className="text-herobtn">IT Solutions</span>
             </h1>
@@ -256,6 +273,8 @@ const Home = () => {
 
             <div>
               <img src={featuresImg} alt="" />
+
+              <img className="hidden   lg:flex " src={featuresImg} alt="" />
             </div>
 
             <div className="grid md:justify-end">
