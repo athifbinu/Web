@@ -9,7 +9,7 @@ const Header = () => {
     { name: "Home", link: "/" },
     { name: "About", link: "/" },
     { name: "Testimonials", link: "/" },
-    { name: "Careers", link: "/" },
+    { name: "Careers", link: "/careers" },
   ];
 
   const [open, setOpen] = useState(false);
