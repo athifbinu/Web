@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaFacebook,
   FaGithub,
@@ -11,19 +12,42 @@ const Footer = () => {
   const sections = [
     {
       title: "Solutions",
-      items: ["Marketing", "Analytics", "Commerce", "Data", "Cloud"],
+      items: [
+        { name: "Marketing", link: "#" },
+        { name: "Analytics", link: "#" },
+        { name: "Commerce", link: "#" },
+        { name: "Data", link: "#" },
+        { name: "Cloud", link: "#" },
+      ],
     },
     {
       title: "Support",
-      items: ["Pricing", "Documentation", "Guides", "API Status"],
+      items: [
+        { name: "Pricing", link: "#" },
+        { name: "Documentation", link: "#" },
+        { name: "Guides", link: "#" },
+        { name: "API Status", link: "#" },
+      ],
     },
     {
       title: "Company",
-      items: ["About", "Blog", "Jobs", "Press", "Partners"],
+      items: [
+        { name: "About", link: "#" },
+        { name: "Blog", link: "#" },
+        { name: "Jobs", link: "/careers" },
+        { name: "Admin", link: "/Dashboard" },
+        { name: "Partners", link: "#" },
+      ],
     },
     {
       title: "Legal",
-      items: ["Claims", "Privacy", "Terms", "Policies", "Conditions"],
+      items: [
+        { name: "Claims", link: "#" },
+        { name: "Privacy", link: "#" },
+        { name: "Terms", link: "#" },
+        { name: "Policies", link: "#" },
+        { name: "Conditions", link: "#" },
+      ],
     },
   ];
 
@@ -49,7 +73,7 @@ const Footer = () => {
               <ul>
                 {section.items.map((item, i) => (
                   <li key={i} className="py-1 text-gray-500 hover:text-white">
-                    {item}
+                    <Link to={item.link}>{item.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -76,9 +100,16 @@ const Footer = () => {
         <div className="flex flex-col max-w-[1240px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-gray-500">
           <p className="py-4">2022 Workflow, LLC. All rights reserved</p>
           <div className="flex justify-between sm:w-[300px] pt-4 text-2xl">
-            {items.map((x, index) => {
-              return <x.icon key={index} className="hover:text-white" />;
-            })}
+            {items.map((x, index) => (
+              <a
+                key={index}
+                href={x.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <x.icon className="hover:text-white" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
