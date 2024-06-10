@@ -50,10 +50,21 @@ const Home = () => {
     // Set a new target value on click
     setTarget((prev) => (prev === 0 ? 20 : 0)); // Example: Toggle between 0 and 100
   };
+
+  const [visibleIndex, setVisibleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleIndex((prevIndex) => (prevIndex + 1) % 3);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
-      <section className="bg-home mb-10">
-        <div className="grid lg:grid-cols-2 items-center p-28 justify-center">
+      <section className="mb-10">
+        <div className="grid lg:grid-cols-2 items-center p-28 justify-center gap-36">
           <motion.div
             className="hidden lg:flex"
             style={{ x }}
@@ -63,12 +74,41 @@ const Home = () => {
           </motion.div>
 
           <div>
-            <h1 className="text-5xl font-bold text-white mb-6">
-              delivering superior <br />
-              <span className="text-herobtn">IT Solutions</span>
-            </h1>
+            <div className="mb-5">
+              <h1 className="text-5xl font-bold text-gradient">We are a</h1>
+            </div>
 
-            <div className="flex text-white text-2xl gap-6">
+            <div className="mb-5">
+              <h1
+                className={`bg-gradient-to-r from-teal-400 to-teal-500 bg-clip-text text-transparent text-5xl font-bold ${
+                  visibleIndex === 0 ? "inline" : "hidden"
+                }`}
+              >
+                Growth driven
+              </h1>
+              <h1
+                className={`bg-gradient-to-r from-teal-400 to-teal-500 bg-clip-text text-transparent text-5xl font-bold ${
+                  visibleIndex === 1 ? "inline" : "hidden"
+                }`}
+              >
+                Consumer inspired
+              </h1>
+              <h1
+                className={`bg-gradient-to-r from-teal-400 to-teal-500 bg-clip-text text-transparent text-5xl font-bold ${
+                  visibleIndex === 2 ? "inline" : "hidden"
+                }`}
+              >
+                Partner focused
+              </h1>
+            </div>
+
+            <div className="mb-10">
+              <h1 className="text-5xl font-bold text-gradient">
+                Digital Agency
+              </h1>
+            </div>
+
+            <div className="flex text-black text-2xl gap-3">
               <FaLinkedin />
               <FaLinkedin />
               <FaLinkedin />

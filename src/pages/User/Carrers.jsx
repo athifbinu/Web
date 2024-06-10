@@ -7,13 +7,14 @@ import mashinetest from "../../assets/Images/mashinetest.png";
 import documentSubmition from "../../assets/Images/cv submition.png";
 import Hrinterview from "../../assets/Images/interviw.png";
 import offerletter from "../../assets/Images/offer letter.png";
+import CarrerCard from "../../components/Ui/CarrerCard";
 
 const Carrers = () => {
   return (
     <div>
-      <section>
-        <div className="flex  justify-between m-32">
-          <div>
+      <section className=" min-h-screen mb-14">
+        <div className="flex  justify-between m-20  ">
+          <div className="hidden lg:flex">
             <img src={hero} alt="" />
           </div>
 
@@ -43,7 +44,7 @@ const Carrers = () => {
         <div className="flex container">
           <div className="flex gap-10 container">
             <div>
-              <div className="bg-orange-200 border w-56 rounded-md mb-12">
+              <div className="bg-violet-100 border w-56 rounded-md mb-12 shadow-2xl">
                 <div className="m-10">
                   <div className="mb-8">
                     <FaChair size={50} />
@@ -60,7 +61,7 @@ const Carrers = () => {
                 </div>
               </div>
 
-              <div className="bg-orange-200 border w-56 rounded-md mb-12">
+              <div className="bg-violet-100 border w-56 rounded-md mb-12 shadow-2xl">
                 <div className="m-10">
                   <div className="mb-8">
                     <FaChair size={50} />
@@ -77,7 +78,7 @@ const Carrers = () => {
                 </div>
               </div>
 
-              <div className="bg-orange-200 border w-56 rounded-md">
+              <div className="bg-violet-100 border w-56 rounded-md shadow-2xl">
                 <div className="m-10">
                   <div className="mb-8">
                     <FaChair size={50} />
@@ -96,7 +97,7 @@ const Carrers = () => {
             </div>
 
             <div className="mt-10">
-              <div className="bg-orange-200 border w-56 rounded-md mb-12">
+              <div className="bg-violet-100 border w-56 rounded-md mb-12 shadow-2xl">
                 <div className="m-10">
                   <div className="mb-8">
                     <FaChair size={50} />
@@ -113,7 +114,7 @@ const Carrers = () => {
                 </div>
               </div>
 
-              <div className="bg-orange-200 border w-56 rounded-md mb-12">
+              <div className="bg-violet-100 border w-56 rounded-md mb-12 shadow-2xl">
                 <div className="m-10">
                   <div className="mb-8">
                     <FaChair size={50} />
@@ -130,7 +131,7 @@ const Carrers = () => {
                 </div>
               </div>
 
-              <div className="bg-orange-200 border w-56 rounded-md">
+              <div className="bg-violet-100 border w-56 rounded-md shadow-2xl">
                 <div className="m-10">
                   <div className="mb-8">
                     <FaChair size={50} />
@@ -239,12 +240,21 @@ const Carrers = () => {
           </div>
 
           <div>
-            <div className=" grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-14"></div>
+            <div className=" grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-14">
+              <CarrerCard />
+              <CarrerCard />
+              <CarrerCard />
+              <CarrerCard />
+              <CarrerCard />
+              <CarrerCard />
+              <CarrerCard />
+              <CarrerCard />
+            </div>
           </div>
         </div>
 
         <div className="container">
-          <div className="bg-orange-400 rounded-lg border-none h-52 ">
+          <div className="  bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-lg border-none h-52 shadow-2xl ">
             <div className=" flex justify-between p-14">
               <div className="text-white">
                 <h1 className="text-center  text-6xl font-extrabold mb-4">
