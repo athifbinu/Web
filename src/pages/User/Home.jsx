@@ -12,13 +12,14 @@ import TestimonialCard from "../../components/Ui/TestimonialCard";
 import { motion, useSpring } from "framer-motion";
 import reactIcon from "../../assets/Images/reactimg.png";
 
-import profile from "../../assets/Images/testimonial-4 1.png";
-import { FaLongArrowAltRight } from "react-icons/fa";
-import { FaLongArrowAltLeft } from "react-icons/fa";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import js from "../../assets/Images/js.png";
+import react from "../../assets/Images/reactjs.png";
+
+import Technology from "../../assets/Data/Technology";
 
 const Home = () => {
   console.log(ProjectsData);
@@ -416,105 +417,20 @@ const Home = () => {
       <section className="mb-10">
         <div className="container mx-auto">
           <div className="text-center text-black mb-8">
-            <h1 className="text-4xl font-bold">Technologies </h1>
+            <h1 className="text-4xl font-bold">Technologies</h1>
           </div>
           <div className="slider">
             <div className="slide-track">
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <motion.img
-                  whileHover={{ scale: 1.3 }}
-                  src={reactIcon}
-                  alt=""
-                />
-              </div>
+              {Technology.map((tech) => (
+                <div className="slide" key={tech.id}>
+                  <motion.img
+                    className="w-28"
+                    whileHover={{ scale: 1.2 }}
+                    src={tech.ProjectImg}
+                    alt=""
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

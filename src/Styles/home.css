@@ -3,18 +3,17 @@
   margin: auto;
   position: relative;
   width: 90%;
-  display: grid;
+  display: flex; /* Changed to flex for a smooth continuous loop */
   align-items: center;
   overflow: hidden;
 }
 
 .slide-track {
   display: flex;
-  width: calc(250 * 18);
+  width: calc(
+    200px * 18 * 2
+  ); /* Adjusted width to twice the number of slides */
   animation: scroll 40s linear infinite;
-}
-.slide-track:hover {
-  animation-play-state: paused;
 }
 
 .slide {
